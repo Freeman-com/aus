@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Registration</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="autorisation.css">
+</head>
+
+<body>
+<header id="header" class="header">
+    <div class="container1">
+        <!-- ================NAVBAR======================== -->
+        <ul class="menu">
+            <li><a class="active" th:href="@{/}">HOME</a></li>
+            <li><a class="settings" th:href="@{/login}">LOGIN</a>
+            <li><a class="settings" th:href="@{/registration}">REGISTRATION</a>
+        </ul>
+    </div>
+</header>
+<!-- ================MAIN======================== -->
+<section id="section-registration" class="section-registration">
+    <form th:method="POST" th:action="@{/create}">
+        <div class="input-group mb-3">
+            <label for="username"></label>
+            <input type="text" class="form-control" placeholder="Username" id="username">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <button type="submit" class="registration-btn">REGISTRATION</button>
+        </div>
+    </form>
+</section>
+<footer>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${xUser.getName()}"></title>
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+<header id="header" class="header">
+    <div class="container1">
+        <!-- ================NAVBAR======================== -->
+        <ul class="menu">
+            <li><a class="active" th:href="@{/index-result}">Home</a></li>
+            <li><a class="settings" th:href="@{/myasset}">My Asset</a>
+            <li class="t1232">
+                <a class="settings1">Activity</a>
+                <ul class="sub-menu">
+                    <li style="float: left"><a href="account.html">Transaction</a></li>
+                    <li style="float: left"><a href="account.html">Manage Currencies</a></li>
+                    <li style="float: left"><a href="account.html">Funding Sourses</a></li>
+                    <li style="float: left"><a class="settings" sec:authorize="hasRole('ADMIN')" th:href="@{/}">List
+                        Users</a>
+                    <li style="float: left"><a class="settings" sec:authorize="hasRole('ADMIN')" th:href="@{/}">Support
+                        Mail</a>
+
+                </ul>
+            </li>
+
+            <li><a class="settings" th:href="@{/myaccounts}">My Accounts</a>
+
+            <li class="t1232">
+                <a class="settings1">Broker</a>
+                <ul class="sub-menu">
+                    <li style="float: left"><a href="account.html">IPO</a></li>
+                    <li style="float: left"><a th:href="@{/ico}">ICO</a></li>
+                    <li style="float: left"><a href="account.html">OTC Market</a></li>
+                </ul>
+            </li>
+
+            <li><a class="settings" sec:authorize="hasRole('ADMIN')" th:href="@{/moderator}">Moderator Functions</a>
+
+            <li class="t123">
+                <a class="settings1"> Customer:&nbsp; <span th:text="${xUser.getName()}"></span></a>
+                <ul class="sub-menu">
+                    <li style="float: left"><a href="account.html">Account</a></li>
+                    <li style="float: left"><a href="myasset.html">My Asset</a></li>
+                    <li style="float: left"><a href="myorders.html">My Orders</a></li>
+                    <li style="float: left"><a href="withdrawal.html">Withdrawal</a></li>
+                    <li style="float: right"><a class="active1" th:href="@{/addapipage}">Add API</a></li>
+                    <li style="float: right"><a class="active1" th:href="@{/logout}">LogOut</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+<!-- ================END-NAVBAR======================== -->
+
+<!--===================USER-INFO======================-->
+
+<div class="user-info-ico">
+    <section class="left-info-ico">
+        <a class="user-name-info-ico"> Project:&nbsp;
+            <span th:text="${xUser.getEmail()}"></span>!</a>
+        <hr class="hr-custom-002">
+        <a class="user-id-info"> Customer ID:&nbsp; <span th:text="${xUser.getId()}"></span></a>
+    </section>
+</div>
+
+<div class="user-info-ico">
+    <section class="left-info-ico">
+        <a class="user-name-info-ico"> Project:&nbsp;
+            <span th:text="${xUser.getEmail()}"></span>!</a>
+        <hr class="hr-custom-002">
+        <a class="user-id-info"> Customer ID:&nbsp; <span th:text="${xUser.getId()}"></span></a>
+    </section>
+</div>
+
+</body>
+</html>
